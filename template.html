@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Templates</title>
+    <style>
+        .item-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Item Templates</h1>
+    <div class="item-container">
+        <!-- Item templates will be inserted here -->
+    </div>
+
+    <script>
+    // This script will be replaced with server-side rendering in a real application
+    async function fetchAndRenderItems() {
+        const response = await fetch('/api/items');
+        const items = await response.json();
+        
+        const container = document.querySelector('.item-container');
+        items.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'item';
+            itemElement.innerHTML = `
+                <h2>${item.name}</h2>
+                <p>ID: ${item.id}</p>
+                <p>Description: ${item.description}</p>
+                <p>Price: $${item.price}</p>
+            `;
+            container.appendChild(itemElement);
+        });
+    }
+
+    fetchAndRenderItems();
+    </script>
+</body>
+</html>

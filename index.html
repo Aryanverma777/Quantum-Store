@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMESTORE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="logo.webp" alt="GameStore Logo">
+                <span>QUANTUM STORE</span>
+            </div>
+            <div class="search-bar">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-nav">
+                <button class="icon-button">
+                    <i data-lucide="bell"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/32" alt="User Avatar">
+                    <div class="user-info">
+                        <p class="user-name">Jason Holder</p>
+                        <p class="user-status">Premium Member</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li class="active" data-url="dashboard"><i data-lucide="layout-dashboard"></i> Dashboard</li>
+                <li data-url="assetstore"><i data-lucide="gamepad"></i> Asset Store</li>
+                <li data-url="myassets"><i data-lucide="gamepad-2"></i> MY Assets </li>
+                <li data-url="favorites"><i data-lucide="heart"></i> Favorites</li>
+                <li data-url="wallet"><i data-lucide="wallet"></i> Wallet </li>
+                <li data-url="about"><i data-lucide="newspaper"></i> About </li>
+                <li data-url="settings"><i data-lucide="settings"></i> Settings</li>
+            </ul>
+            <div class="promo-card">
+                <i data-lucide="gift"></i>
+                <p>Special Offer!</p>
+                <p>Get your first game with 20% discount!</p>
+            </div>
+        </nav>
+
+        <!-- Main Content Section -->
+        <main id="content">
+            <!-- Default content will be loaded here -->
+        </main>
+
+        <!-- MetaMask Wallet Connection Section (only visible in the Wallet section) -->
+        <div id="metamask-status" style="display: none;">
+            <p id="metamask-message">MetaMask not connected.</p>
+            <button id="connect-button">Connect MetaMask</button>
+        </div>
+            
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
